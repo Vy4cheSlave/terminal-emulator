@@ -1,0 +1,53 @@
+definitions:
+  github_com_Vy4cheSlave_test-task-postgres_bash.ReqCreateNewCommandBody:
+    properties:
+      bash_strings:
+        items:
+          type: string
+        type: array
+    type: object
+info:
+  contact: {}
+  license:
+    name: Apache 2.0
+  title: bash API
+  version: "1.0"
+paths:
+  /bash/create-command:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: input bash string
+        in: body
+        name: new_command
+        required: true
+        schema:
+          $ref: '#/definitions/github_com_Vy4cheSlave_test-task-postgres_bash.ReqCreateNewCommandBody'
+      produces:
+      - application/json
+      responses: {}
+      tags:
+      - /bash/
+  /bash/get-commands:
+    get:
+      produces:
+      - application/json
+      responses: {}
+      tags:
+      - /bash/
+  /bash/get-commands/{id}:
+    get:
+      parameters:
+      - description: uint without 0
+        in: path
+        minimum: 1
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses: {}
+      tags:
+      - /bash/
+swagger: "2.0"

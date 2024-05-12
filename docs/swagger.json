@@ -1,0 +1,83 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "bash API",
+        "contact": {},
+        "license": {
+            "name": "Apache 2.0"
+        },
+        "version": "1.0"
+    },
+    "paths": {
+        "/bash/create-command": {
+            "post": {
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "/bash/"
+                ],
+                "parameters": [
+                    {
+                        "description": "input bash string",
+                        "name": "new_command",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/github_com_Vy4cheSlave_test-task-postgres_bash.ReqCreateNewCommandBody"
+                        }
+                    }
+                ],
+                "responses": {}
+            }
+        },
+        "/bash/get-commands": {
+            "get": {
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "/bash/"
+                ],
+                "responses": {}
+            }
+        },
+        "/bash/get-commands/{id}": {
+            "get": {
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "/bash/"
+                ],
+                "parameters": [
+                    {
+                        "minimum": 1,
+                        "type": "integer",
+                        "description": "uint without 0",
+                        "name": "id",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {}
+            }
+        }
+    },
+    "definitions": {
+        "github_com_Vy4cheSlave_test-task-postgres_bash.ReqCreateNewCommandBody": {
+            "type": "object",
+            "properties": {
+                "bash_strings": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            }
+        }
+    }
+}
