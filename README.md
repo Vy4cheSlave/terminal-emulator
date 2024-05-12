@@ -1,14 +1,8 @@
 # test-task-postgres
 
-
-# Введение
 Документация описывает REST API, обрабатывающий следующие запросы: создание команд, просмотр всех комманд, просмотр одной комманды по id. Команды пишутся как bash-скрипт. Все команды запускаются параллельно.
 
-
-# Запуск
-
 # Требования
-- Операционная система: MacOS или Linux(Fedora 40: Silverblue).
 - Язык программирования: Golang
 - Библиотеки: Сторонние [github.com/golang/mock, 
 	github.com/jackc/pgx/v5, 
@@ -16,6 +10,7 @@
 	github.com/swaggo/http-swagger/v2, 
 	github.com/swaggo/swag]
 - Docker, docker-compose
+- Операционная система: MacOS или Linux(Fedora 40: Silverblue).
 
 # Шаги запуска
 1. Клонировать репозиторий:
@@ -31,9 +26,6 @@ cd test-task-postgres
 sudo docker-compose up
 ```
 
-
-# Документация реализованного API
-
 # URL
 URL конечных путей - `http://0.0.0.0:8000/bash/`.
 
@@ -46,7 +38,7 @@ Swagger URL - `http://localhost:8080/swagger/`.
 - `HTTPCode`: Код состояния HTTP, который будет возвращен в ответе.
 
 
-# Обрабатываемые пути
+# API
 
 ## Создание Bash скриптов
 - **URL:** `/bash/create-command`
